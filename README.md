@@ -6,8 +6,8 @@
 
 ## Install
 
-> [!INFO]
-> You will need [Zig 0.15](https://ziglang.org/download/#:~:text=52MiB-,0.15.1,-2025%2D08%2D19) and a command line interface
+> [!IMPORTANT]
+> You will need [Zig 0.15](https://ziglang.org/download/#:~:text=52MiB-,0.15.1,-2025%2D08%2D19 "Zig 0.15.1 download") and a command line interface
 
 Clone this repository using `git clone` or download the ZIP file and cd into it using your terminal
 ```sh
