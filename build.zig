@@ -25,6 +25,10 @@ pub fn build(b: *std.Build) void {
         .root_module = exe_mod,
     });
 
+    if (target.result.os.tag == .windows) {
+        exe.subsystem = .Windows;
+    }
+
     b.installArtifact(exe);
 
     const install_artifact = b.addInstallArtifact(exe, .{});
