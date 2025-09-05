@@ -3,7 +3,7 @@ const std = @import("std");
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     var optimize: std.builtin.OptimizeMode = .ReleaseFast;
-    if (b.option(bool, "debug", "Whether or not debugging should be enabled (false default)") orelse false) {
+    if (b.option(bool, "debug", "Whether or not debugging should be enabled (false by default)") orelse false) {
         optimize = .Debug;
     }
 
@@ -25,17 +25,16 @@ pub fn build(b: *std.Build) void {
         .root_module = exe_mod,
     });
 
+    b.installArtifact(exe);
+
+    const install_artifact = b.addInstallArtifact(exe, .{});
     const run_artifact = b.addRunArtifact(exe);
 
     if (b.args) |args| {
         run_artifact.addArgs(args);
     }
 
-    const build_artifact = b.addInstallArtifact(exe, .{});
-
-    const run = b.step("run", "Executes the program");
+    const run = b.step("run", "Compiles and executes the program");
+    run.dependOn(&install_artifact.step);
     run.dependOn(&run_artifact.step);
-    run.dependOn(&build_artifact.step);
-
-    b.installArtifact(exe);
 }
