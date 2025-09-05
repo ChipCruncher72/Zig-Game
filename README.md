@@ -1,7 +1,7 @@
 # Zig Game (Name WIP)
 
 > [!WARNING]
-> Note that there isn't actually a game yet and I've just created a shell for future use
+> Note that there isn't actually a game yet and I've just created a shell for future use\
 > You are free to download and play this, though if there is no itch page linked, do not expect anything fun
 
 ## Install
