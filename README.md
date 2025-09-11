@@ -20,3 +20,8 @@ zig build
 # Alternatively
 zig build run
 ```
+
+### Extra options
+- `-Ddebug` - Enables debugging, and lowest optimization mode (default false)
+- `-Ddynamic_link` - If SDL3 should be dynamically linked or not (default false) (REQUIRES DOWNLOADING SDL3)
+- `-Daggressive` - Performs aggressive optimizations, and highest optimization mode (default false)
